@@ -6,7 +6,7 @@
 /*   By: vincent <vincent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:22:41 by vvan-der          #+#    #+#             */
-/*   Updated: 2023/07/22 14:42:14 by vincent          ###   ########.fr       */
+/*   Updated: 2023/07/22 15:05:30 by vincent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,23 +83,12 @@ int	ft_printf(const char *input, ...)
 {
 	va_list	args;
 	int		i;
-	int		write_ret;
 	int		count;
 
 	i = 0;
-	write_ret = 0;
 	count = 0;
 	va_start(args, input);
 	count = ft_gobrr(input, args, i, count);
 	va_end(args);
 	return (count);
 }
-
-/* int	main()
-{
-	char	*string = "abc%%%%%shiakj";
-	int	input = -8273582;
-	int	ret_value	= ft_printf("\n %s %s %s %s %s ", " - ", "", "4", "", "2 ");
-	int ret_value2	= printf("\n %s %s %s %s %s ", " - ", "", "4", "", "2 ");
-	printf("\nRes1:%d\nRes2:%d\n", ret_value, ret_value2);
-} */

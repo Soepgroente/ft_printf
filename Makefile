@@ -3,38 +3,37 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vvan-der <vvan-der@student.42.fr>          +#+  +:+       +#+         #
+#    By: vincent <vincent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:19:46 by vvan-der          #+#    #+#              #
-#    Updated: 2022/12/15 16:30:55 by vvan-der         ###   ########.fr        #
+#    Updated: 2023/07/22 15:07:07 by vincent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADERFILES = ft_printf.h
+NAME	= libftprintf.a
+RM		= rm -rf
+CC		= gcc
+CFLAGS	= -Wall -Werror -Wextra
 
-NAME = libftprintf.a
-
-RM = rm -f
-
-CC = gcc
-
-CFLAGS = -Wall -Werror -Wextra
-
-PRINTF_FILES = ft_bzero.c ft_calloc.c ft_lutoa.c ft_printf.c \
+SRCS	= ft_bzero.c ft_calloc.c ft_lutoa.c ft_printf.c \
 		ft_putchar_fd.c ft_putstrlen_fd.c ft_strchr.c ft_strlen.c ft_writoa.c
 
-O_PRINTF = $(PRINTF_FILES:.c=.o)
+OBJS	= $(SRCS:%.c=$(OBJDIR)/%.o)
+OBJDIR	= printobjs
 
-$(NAME):	$(O_PRINTF)
-		ar rcs $(NAME) $(O_PRINTF)
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(NAME): $(OBJDIR) $(OBJS)
+		ar rcs $(NAME) $(OBJS)
 
 all:	$(NAME)
 
-%.o : %.c
+$(OBJDIR)/%.o : %.c
 		$(CC) -c $(CFLAGS) -o $@ $^
 
 clean:
-		$(RM) $(O_PRINTF)
+		$(RM) $(OBJDIR)
 
 fclean: clean
 		$(RM) $(NAME)
