@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvan-der <vvan-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vincent <vincent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 15:22:35 by vvan-der          #+#    #+#             */
-/*   Updated: 2022/12/14 18:36:35 by vvan-der         ###   ########.fr       */
+/*   Updated: 2023/07/22 14:40:00 by vincent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "ft_printf.h"
 
 void	ft_bzero(void *s, size_t n)

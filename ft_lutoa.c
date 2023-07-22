@@ -3,18 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lutoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvan-der <vvan-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vincent <vincent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:44:00 by vvan-der          #+#    #+#             */
-/*   Updated: 2022/12/15 16:49:08 by vvan-der         ###   ########.fr       */
+/*   Updated: 2023/07/22 14:47:09 by vincent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdio.h>
 #include "ft_printf.h"
 
 static int	length(size_t n, int base)
@@ -36,10 +31,8 @@ int	ft_lutoa(size_t args, int base, int b)
 {
 	char	*res;
 	int		x;
-	int		y;
 
 	x = length(args, base) - 1;
-	y = x;
 	res = ft_calloc(x + 2, sizeof(char));
 	if (!res)
 		return (-1);

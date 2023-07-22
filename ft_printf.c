@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvan-der <vvan-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vincent <vincent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:22:41 by vvan-der          #+#    #+#             */
-/*   Updated: 2022/12/16 16:57:09 by vvan-der         ###   ########.fr       */
+/*   Updated: 2023/07/22 14:42:14 by vincent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	ft_gobrr(const char *input, va_list args, int i, int count)
 		if (input[i] == '%' && (input [i + 1]))
 		{
 			i++;
-			if (ft_strchr("cspdiuxX%%", input[i]))
+			if (ft_strchr("cspdiuxX%", input[i]))
 			{
 				write_ret = ft_handle(&input[i], args);
 				if (write_ret == -1)

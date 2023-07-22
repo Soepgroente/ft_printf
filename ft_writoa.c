@@ -3,17 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_writoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvan-der <vvan-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vincent <vincent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:06:09 by vvan-der          #+#    #+#             */
-/*   Updated: 2022/12/15 16:49:24 by vvan-der         ###   ########.fr       */
+/*   Updated: 2023/07/22 14:40:50 by vincent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <limits.h>
 #include "ft_printf.h"
 
 static int	length(int x)
