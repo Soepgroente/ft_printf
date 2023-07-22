@@ -6,7 +6,7 @@
 #    By: vincent <vincent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:19:46 by vvan-der          #+#    #+#              #
-#    Updated: 2023/07/22 15:07:07 by vincent          ###   ########.fr        #
+#    Updated: 2023/07/22 15:21:33 by vincent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,13 @@ SRCS	= ft_bzero.c ft_calloc.c ft_lutoa.c ft_printf.c \
 OBJS	= $(SRCS:%.c=$(OBJDIR)/%.o)
 OBJDIR	= printobjs
 
-$(OBJDIR):
-	mkdir -p $(OBJDIR)
+all:	$(NAME)
 
 $(NAME): $(OBJDIR) $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
-all:	$(NAME)
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 $(OBJDIR)/%.o : %.c
 		$(CC) -c $(CFLAGS) -o $@ $^
